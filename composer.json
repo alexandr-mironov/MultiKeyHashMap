@@ -1,0 +1,28 @@
+{
+  "name": "alexandr-mironov/multikeyhashmap",
+  "description": "Multi key hashmap for group of entities with more then one unique possible key",
+  "keywords": ["Map", "HashMap", "Collection"],
+  "homepage": "https://github.com/alexandr-mironov/MultiKeyHashMap",
+  "type": "library",
+  "license": "LGPL",
+  "authors": [
+    {
+      "name": "Alexandr Mironov",
+      "email": "alex@hyptrex.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MultiKeyHashMap\\": "src/",
+      "Test\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9",
+    "phpstan/phpstan": "^1.9"
+  },
+  "require": {
+    "php": "^8",
+    "ext-pdo": "*"
+  }
+}
