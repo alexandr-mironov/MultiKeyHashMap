@@ -22,7 +22,6 @@
     "phpstan/phpstan": "^1.9"
   },
   "require": {
-    "php": "^8",
-    "ext-pdo": "*"
+    "php": "^8"
   }
 }
