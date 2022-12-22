@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace MultiKeyHashMap;
 
 use Generator;
-use InvalidArgumentException;
 use Iterator;
 use MultiKeyHashMap\Exception\InvalidItem;
 use MultiKeyHashMap\Exception\KeyNotExists;
@@ -74,16 +73,6 @@ class Collection implements Iterator
     }
 
     /**
-     * @param object $item
-     *
-     * @return bool
-     */
-    public function validateItem(object $item): bool
-    {
-        return $item instanceof $this->entityClass;
-    }
-
-    /**
      * @return string
      */
     public function getType(): string
@@ -108,6 +97,16 @@ class Collection implements Iterator
         foreach ($this->keyMaps as $mapKey => &$collection) {
             $collection[(string)$item->$mapKey] = &$item; // ?object was set as link anyway?
         }
+    }
+
+    /**
+     * @param object $item
+     *
+     * @return bool
+     */
+    public function validateItem(object $item): bool
+    {
+        return $item instanceof $this->entityClass;
     }
 
     /**
