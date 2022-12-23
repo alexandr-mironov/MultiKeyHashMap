@@ -30,11 +30,8 @@ class CollectionTest extends TestCase
         /** @var TestEntity[] $letterMap */
         $letterMap = $collection->getMap('letter');
 
-//        shuffle($idMap);
-//        shuffle($letterMap);
-
         for ($i = 0; $i < 10; $i++) {
-            $randomIndex = rand(1, 27);
+            $randomIndex = rand(1, 26);
             $randomLetter = $this->getLetter($randomIndex);
 
             $hash = md5($randomIndex . $randomLetter);
@@ -51,12 +48,20 @@ class CollectionTest extends TestCase
         }
     }
 
+    /**
+     * @return TestEntity
+     */
     protected function getItem(): TestEntity
     {
         self::$index++;
         return new TestEntity(self::$index, $this->getLetter(self::$index));
     }
 
+    /**
+     * @param int $index
+     *
+     * @return string
+     */
     protected function getLetter(int $index): string
     {
         return chr($index + self::OFFSET);
