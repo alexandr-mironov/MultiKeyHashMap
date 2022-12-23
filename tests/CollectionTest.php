@@ -5,8 +5,17 @@ declare(strict_types=1);
 namespace Test;
 
 use MultiKeyHashMap\Collection;
+use MultiKeyHashMap\Exception\InvalidItem;
+use MultiKeyHashMap\Exception\KeyNotExists;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class CollectionTest
+ *
+ * @package Test
+ *
+ * @coversDefaultClass \MultiKeyHashMap\Collection
+ */
 class CollectionTest extends TestCase
 {
     private static int $index = 0;
@@ -18,6 +27,13 @@ class CollectionTest extends TestCase
         self::$index = 0;
     }
 
+    /**
+     * @covers ::getMap
+     * @covers ::push
+     *
+     * @throws InvalidItem
+     * @throws KeyNotExists
+     */
     public function testGetMap(): void
     {
         $collection = new Collection(TestEntity::class, 'id', 'letter');
