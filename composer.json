@@ -4,7 +4,7 @@
   "keywords": ["Map", "HashMap", "Collection"],
   "homepage": "https://github.com/alexandr-mironov/MultiKeyHashMap",
   "type": "library",
-  "license": "LGPL",
+  "license": "LGPL-3.0-or-later",
   "authors": [
     {
       "name": "Alexandr Mironov",
